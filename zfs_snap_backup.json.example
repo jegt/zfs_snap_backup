@@ -1,0 +1,6 @@
+{
+  "bucket":"foobar",
+  "filesystems":[
+	  "foo/bar"
+  ]
+}
