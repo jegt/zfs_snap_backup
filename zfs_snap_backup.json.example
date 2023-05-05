@@ -1,5 +1,6 @@
 {
   "bucket":"foobar",
+  "storage_class":"DEEP_ARCHIVE",
   "filesystems":[
 	  "foo/bar"
   ]
