@@ -46,7 +46,7 @@ filesystems.each do |fs|
       out,st = Open3.capture2(command+' -n -P | grep size')
       size = out.split.last.to_i
 
-      s3_command = "aws s3 cp - s3://#{config['bucket']}/#{snap.gsub('@','/')} --expected-size #{size} --storage-class STANDARD_IA" # DEEP_ARCHIVE
+      s3_command = "aws s3 cp - s3://#{config['bucket']}/#{snap.gsub('@','/')} --expected-size #{size} --storage-class #{config['storage_class']}"
 
       puts "Sending #{snap}..."
       system("#{command} | #{s3_command}")
