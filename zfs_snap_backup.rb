@@ -3,6 +3,8 @@ require 'json'
 
 config = JSON.parse(File.read(ARGV[0]))
 
+puts "ZFS Snap Backup #{Time.now}"
+
 snapshots = {}
 
 `zfs list -t snapshot | grep zfs-auto-snap`.lines.each do |l|
@@ -56,4 +58,5 @@ filesystems.each do |fs|
   end
 end
 
+puts ""
 
